@@ -1,10 +1,15 @@
 const container = document.querySelector('#container');
-const gridSize = 17.4;
-const colors = ['purple','green','orange','pink','purple','blue','red','yellow','violet','gold'];
+let gridSize = 16;
+const colors = ['purple','green','orange','pink','purple','blue','red','yellow','violet','gold','almond','maroon','peach'];
+   
+function createGrid() {
+    const container = document.querySelector('#container');
+    container.innerHTML = '';
+
     for (let i = 0; i < gridSize * gridSize; i++) {
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
-        container.appendChild(gridSquare);
+        container.appendChild(gridSquare); 
 
         gridSquare.addEventListener('mouseover', function(){
             const randomColor = colors[Math.floor(Math.random() * colors.length)]
@@ -14,4 +19,21 @@ const colors = ['purple','green','orange','pink','purple','blue','red','yellow',
             gridSquare.style.backgroundColor = "";
         });
     }
+}
 
+function createNewGrid() {
+            const newGridSize = prompt('Enter the number of squares per side (maximum 100):');
+
+            // Validate the input
+            if (newGridSize && !isNaN(newGridSize) && newGridSize > 0 && newGridSize <= 100) {
+                gridSize = parseInt(newGridSize);
+                createGrid();
+            } else {
+                alert('Invalid input! Please enter a number between 1 and 100.');
+            }
+        }
+        
+createGrid();
+
+const btn = document.getElementById("grid");
+btn.addEventListener('click',createNewGrid);
