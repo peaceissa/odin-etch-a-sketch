@@ -1,8 +1,8 @@
 #container{
     display: flex;
     flex-wrap: wrap;
-    height: 640px;
-    width: 640px;
+    height: 400px;
+    width: 400px;
     /* max-width: 100%; */
     border: 2px solid black;
     background-color: rgb(27, 215, 228);
@@ -11,10 +11,7 @@
     margin-top: 16px;
 }
 .grid-square{
-    width: calc(640/16);
-    height: calc(640/16);
+    width: 20px;
+    heigth: 20px;
     /* border: 1px solid black; */
-}
-.grid-square:hover{
-    background-color: red;
 }

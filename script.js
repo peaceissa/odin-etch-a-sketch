@@ -3,8 +3,7 @@ let gridSize = 16;
 const colors = ['purple','green','orange','pink','purple','blue','red','yellow','violet','gold','almond','maroon','peach'];
    
 function createGrid() {
-    const container = document.querySelector('#container');
-    container.innerHTML = '';
+    // container.innerHTML = '';
 
     for (let i = 0; i < gridSize * gridSize; i++) {
         const gridSquare = document.createElement('div');
@@ -15,9 +14,12 @@ function createGrid() {
             const randomColor = colors[Math.floor(Math.random() * colors.length)]
             gridSquare.style.backgroundColor = randomColor;
         });
-        gridSquare.addEventListener('mouseout',function(){
-            gridSquare.style.backgroundColor = "";
-        });
+        // gridSquare.addEventListener('mouseout',function(){
+        //     gridSquare.style.backgroundColor = "";
+        // });
+
+        // container.appendChild(gridSquare); 
+
     }
 }
 
@@ -37,3 +39,5 @@ createGrid();
 
 const btn = document.getElementById("grid");
 btn.addEventListener('click',createNewGrid);
+
+// 
