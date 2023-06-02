@@ -22,9 +22,12 @@ function createGrid() {
 
     }
 }
-
+function clearSketch(){
+    location.reload();
+}
 function createNewGrid() {
-            const newGridSize = prompt('Enter the number of squares per side (maximum 100):');
+        
+        const newGridSize = prompt('Enter the number of squares per side (maximum 100):');
 
             // Validate the input
             if (newGridSize && !isNaN(newGridSize) && newGridSize > 0 && newGridSize <= 100) {
@@ -40,4 +43,5 @@ createGrid();
 const btn = document.getElementById("grid");
 btn.addEventListener('click',createNewGrid);
 
-// 
+const clr = document.getElementById('clr');
+clr.addEventListener('click',clearSketch);
